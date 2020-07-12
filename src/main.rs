@@ -23,4 +23,15 @@ fn main() {
     for i in 0..20 {
         println!("{}", i)
     }
+
+    let mut strings = Vec::new();
+    strings.push("100");
+    strings.push("200");
+    strings.push("300");
+    // for s in strings {
+    // 参照に対してループ式を適用しないとオーナーシップが移動してしまう
+    for s in &strings {
+        println!("{}", s)
+    }
+    println!("end of loop with {} elements", strings.len());
 }
