@@ -17,4 +17,10 @@ fn main() {
         Some(v) => println!("Some value is {}", v),
         None => println!("Some value is None")
     }
+
+    // ..演算子は範囲（range）を生成する
+    // std::ops::Range{ start: 0, end: 20 } と同じ意味
+    for i in 0..20 {
+        println!("{}", i)
+    }
 }
