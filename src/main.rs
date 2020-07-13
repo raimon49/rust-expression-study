@@ -1,3 +1,7 @@
+fn f() {
+    // return (); の省略形
+    return;
+}
 fn main() {
     let code = 100;
     match code {
@@ -34,4 +38,7 @@ fn main() {
         println!("{}", s)
     }
     println!("end of loop with {} elements", strings.len());
+
+    let r = f(); // return; では実際には空のタプルが返されている
+    assert_eq!(r, ())
 }
