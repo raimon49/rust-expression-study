@@ -41,5 +41,10 @@ fn main() {
     println!("end of loop with {} elements", strings.len());
 
     let r = f(); // return; では実際には空のタプルが返されている
-    assert_eq!(r, ())
+    assert_eq!(r, ());
+
+    // スタティックメソッド呼び出しのジェネリクスでは ::<...> ターボフィッシュを使う
+    // Vec<i32>::new や Vec<i32>::with_capacity は比較演算子と見做されコンパイルエラー
+    let numbers = Vec::<i32>::with_capacity(1000);
+    assert_eq!(numbers.len(), 1000);
 }
