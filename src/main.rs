@@ -47,4 +47,15 @@ fn main() {
     // Vec<i32>::new や Vec<i32>::with_capacity は比較演算子と見做されコンパイルエラー
     let numbers = Vec::<i32>::with_capacity(1000);
     assert_eq!(numbers.len(), 1000);
+
+    // RustのRangeは半開区間（half-open）であり、開始値は含むが終了値は含まない
+    assert_eq!((3..5), std::ops::Range { start: 3, end: 5 });
+    assert_eq!(3 + 4 + 5, (3..6).sum());
+    let arr = [0, 1, 2, 3, 4];
+    assert_eq!(arr[ ..  ], [0,1,2,3,4]);
+    assert_eq!(arr[ .. 3], [0,1,2    ]);
+    assert_eq!(arr[ ..=3], [0,1,2,3  ]);
+    assert_eq!(arr[1..  ], [  1,2,3,4]);
+    assert_eq!(arr[1.. 3], [  1,2    ]);  // Range
+    assert_eq!(arr[1..=3], [  1,2,3  ]);
 }
