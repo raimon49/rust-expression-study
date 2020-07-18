@@ -58,4 +58,8 @@ fn main() {
     assert_eq!(arr[1..  ], [  1,2,3,4]);
     assert_eq!(arr[1.. 3], [  1,2    ]);  // Range
     assert_eq!(arr[1..=3], [  1,2,3  ]);
+
+    let hi: u8 = 0xe0;
+    let lo = !hi; // ビット反転は~でなく!
+    assert_eq!(lo, 0x1f);
 }
