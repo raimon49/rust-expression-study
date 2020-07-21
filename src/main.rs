@@ -62,4 +62,10 @@ fn main() {
     let hi: u8 = 0xe0;
     let lo = !hi; // ビット反転は~でなく!
     assert_eq!(lo, 0x1f);
+
+    let is_even = |x| x % 2 ==0;
+    let is_even_i64 = |x: u64| -> bool { x % 2 == 0 }; // 返り値の型を明示する場合にはボディ部をブロックにしなければならない
+
+    assert_eq!(is_even(14), true);
+    assert_eq!(is_even_i64(14), true);
 }
